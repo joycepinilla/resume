@@ -1,0 +1,371 @@
+
+* {
+    margin: 0;
+    padding: 0;  
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+body, ul {  
+    cursor: default;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 80%;
+    overflow: hidden; /* Hide scrollbars */
+}
+
+nav {
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    background-repeat: no-repeat;
+    background-image: url('../images/backgroundd.png');
+    z-index: 1;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 18px 20px; /*0 refers to top and bottom
+    15px to left and right */
+    padding: 0px;
+    text-transform: uppercase;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bolder;
+    font-family: 'Yuji Syuku', serif;
+    font-size: 14px;
+}
+
+nav ul li .nav-link {
+    color: white;
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+    color: pink;
+}
+
+nav ul li .active {
+    color: hotpink;
+}
+
+nav ul li .active:hover {
+    color: hotpink;
+}
+
+.button {
+    border: 1px solid;
+    text-decoration: none;
+    color: hotpink;
+    padding: 10px 30px;
+    margin-top: 40px;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+header {
+    position: relative;
+    padding: 20px 0px;
+    padding-bottom: 50px;
+    background-repeat: no-repeat;
+    background-image: url('../images/backgroundd.png');
+    background-position-y: -25px;
+}
+
+header .container {
+    height: 610px;
+    margin: 50px auto;
+    text-align: left;
+    padding-top: 70px;
+    position: sticky;
+}
+
+header #centerdiv {
+    width: 70%;
+    height: auto;
+    margin: 0px auto;
+}
+
+header #div1 {
+    width: 50%;
+    height: auto;
+    float: left;
+}
+
+header #div2
+{
+  width: 50%;
+  height: auto;
+  float:left;
+} 
+
+header h1 {
+    font-family: 'Praise', cursive;
+    font-weight: bolder;
+    font-size: 60px;
+    padding: 10px 0px;
+}
+
+header a {
+    text-decoration: none;
+    font-weight: bolder;
+    color: white;
+}
+
+header p {
+    width: 380px;
+}
+
+img {
+    width: 320px;
+    max-width:100%;
+}
+
+.container2 {
+    height: 610px;
+    margin: 50px;
+    text-align: left;
+    padding-top: 70px;
+}
+
+h2 {
+    font-family: 'Praise', cursive;
+    font-weight: bolder;
+    font-size: 50px;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Praise', cursive;
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 10px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+h4 {
+    font-family: 'Praise', cursive;
+    font-weight: bolder;
+    font-size: 50px;
+    text-align: center;
+    padding: 50px;
+}
+
+h5 {
+    font-family: 'Yuji Syuku', serif;
+    font-weight: none;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+h6 {
+    font-family: 'Yuji Syuku', serif;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.skills {
+    height: 100%;
+    font-size: 14px;
+    margin-top: 100px;
+    background-repeat: no-repeat;
+    background-position-y: -150px;
+    background-image: url('../images/backgroundd.png');
+}
+
+#languages {
+    font-size: 10px;
+    position: relative;
+}
+
+.resume {
+    margin: 150px 0px;
+    padding: 40px;
+    background-repeat: no-repeat;
+    background-image: url('../images/backgroundd.png');
+    background-position-y: -160px;
+    position: relative;
+}
+
+.resume ul {
+    margin-top: 0px;
+}
+
+meter {
+    background: none;
+    border-radius: 2rem;
+}
+  
+meter::-webkit-meter-optimum-value {
+    background: -webkit-linear-gradient(hotpink,pink,thistle)
+}
+
+section form input {
+    color: black;
+    font-family: 'Yuji Syuku', Serif;
+    background-color: pink;
+    opacity: 40%;
+    text-align: center;
+}
+
+
+form {
+    position: sticky;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Yuji Syuku', Serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: white;
+    
+}
+
+textarea {
+    position: sticky;
+    text-align: center;
+    font-family: 'Yuji Syuku', Serif;
+    font-size: 16px;
+    color: gray;
+    border-color: #ecd8e4;
+    border-style: dotted dotted double dotted;
+    resize: none;
+}
+
+
+.contactme {
+    background-repeat: no-repeat;
+    background-image: url('../images/backgroundd.png');
+    padding-top: 30px;
+}
+
+#send {
+    color: darkslategray;
+    border-color: hotpink;
+    border-radius: 24px;
+    width: 120px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    body {
+        font-size: 14px;
+        overflow-y: visible;
+        overflow-x: hidden;
+        max-width: 100%;
+        top: 0;
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    nav {
+        overflow: hidden;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        margin: 0px 0px;
+        background-repeat: no-repeat;
+        background-image: url('../images/backgroundd.png');
+        z-index: 1;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin: 0px 5px; /*0 refers to top and bottom
+        15px to left and right */
+        padding: 0px;
+        text-transform: uppercase;
+    }
+
+    body header {
+        padding: 10px 0px;
+        background-position: initial;
+        background-repeat: no-repeat;
+        background-image: url('../images/backgroundd.png');
+        margin-top: -100px;
+        margin-bottom: 450px;
+    }
+
+    .skills {
+        height: 100%;
+        font-size: 14px;
+        margin-top: -50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-bottom: 350px;
+        background-repeat: no-repeat;
+        background-position: initial;
+        background-position-y: -20px;
+        background-image: url('../images/backgroundd.png');
+        
+    }
+    
+
+    body header h1 {
+        font-size: 44px;
+    }
+
+    h2 { 
+        font-size: 38px;
+        padding-top: 0px;
+        margin-top: -10px;
+    }
+
+    h4 {
+        font-size: 38px;
+        padding: 60px;
+    }
+
+    h5 {
+        font-size: 17px;
+        word-spacing: 0px;
+        padding: 20px;
+    }
+
+    .resume {
+        max-width: 100%;
+        position: relative;
+        background-position-y: -160px;
+        padding-top: 40px;
+        margin-top: -40px;
+        background-repeat: no-repeat;
+        background-image: url('../images/backgroundd.png');
+        background-position-y: -100px;
+    }
+
+    #exp {
+        width: 95%;
+    }
+
+    #languages {
+        position: relative;
+        text-align: center;
+
+    }
+
+    body header #div1 {
+        position: relative;
+        width: fit-content;
+
+    }
+
+    body header #div2 {
+        position: relative;
+        width: fit-content;
+    }
+
+    header p {
+        width: 100%;
+    }
+}

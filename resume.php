@@ -14,14 +14,14 @@
         <script src="/JavaScript/jquery.js"></script>
     </head>
     <body> 
-        <nav>
+    <nav>
             <ul>
                 <li><a href="/" class="active">home</a></li>
                 <li><a href="#skills" class="nav-link">skills</a></li>
-                <li><a href="/resume.html" class="nav-link">resume</a></li>
-                <li><a href="/references.html" target="_blank" class="nav-link">references</a></li>
+                <li><a href="/resume.php" class="nav-link">resume</a></li>
+                <li><a href="/references.php" target="_blank" class="nav-link">references</a></li>
                 <li><a href="https://instagram.com/joyce.pinillaa/" target="_blank" class="nav-link">instagram</a></li>
-                <li><a href="/contact.html" class="nav-link">contact</a></li>
+                <li><a href="/contact.php" class="nav-link">contact</a></li>
             
             </ul>
         </nav>

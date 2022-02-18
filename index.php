@@ -13,7 +13,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="/JavaScript/jquery.js"></script>
     </head>
-    <body> 
+    <body>
+    <?php include 'skills.php';?> 
         <nav>
             <ul>
                 <li><a href="/" class="active">home</a></li>
@@ -30,19 +31,15 @@
                 <div class="row" id="centerdiv">
                      <!-- /* left column */ -->
                      <div class="col-sm" id="div1">
-                        <figure>
-                            <img src="images/me.png" alt="Joyce Pinilla">
-                            <figcaption>
-
-                            </figcaption>
-                        </figure>
+                     <h1>hi, i'm <br/>joyce pinilla</h1>
                     </div>
 
                     <!-- /* right column */ -->
                     <div class="col-sm" id="div2">
-                    <h1>hi, i'm <br/>joyce pinilla</h1>
+                    
                     <p class="main">
-                        I'm a multimedia artist, stylist, and aspiring web developer and designer!</p>
+                        I'm a multimedia artist, stylist, and aspiring web developer and designer!
+                    <?php newList($mySkills);?></p>
                         <a href="https://www.linkedin.com/in/joyce-pinilla-a9869315b" class="button">add me on linkedin</a>
                     </div>
                 </div>

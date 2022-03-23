@@ -12,6 +12,54 @@
         </head>
 
     <body>
+
+	<?php
+		$nameErr = $emailErr = $contBackErr = "";
+		$name = $email = $comment = "";
+		$formErr = false;
+
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			
+			if (empty($_POST["firstname"])) {
+				$nameErr = "Name is required.";
+				$formErr = true;
+			} else {
+				$name = cleanInput($_POST["firstname"]);
+				if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+					$nameErr = "Only letters and standard spaces allowed.";
+					$formErr = true;
+				}
+			}
+			
+			if (empty($_POST["email"])) {
+				$emailErr = "Email is required.";
+				$formErr = true;
+			} else {
+				$email = cleanInput($_POST["email"]);
+				if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+					$emailErr = "Please enter a valid email address.";
+					$formErr = true;
+				}
+			}
+			
+			if (empty($_POST["comments"])) {
+				$commentErr = "Please enter a comment";
+				$formErr = true;
+			} else {
+				$comment = cleanInput($_POST["comments"]);
+			}
+			
+			$comment = cleanInput($_POST["comments"]);
+		}
+
+		function cleanInput($data) {
+			$data = trim($data);
+			$data = stripslashes($data);
+			$data = htmlspecialchars($data);
+			return $data;
+		}
+	?>
+
     <nav>
             <ul>
                 <li><a href="/" class="active">home</a></li>
@@ -23,44 +71,28 @@
             
             </ul>
         </nav>
-
   <section class="contactme" id="contactme">
     <h4>contact me</h4>
     <div class="form" id="form">
         <br><br>
-        <form  
-        action="mailto:joyce.pinilla@live.com"
-        method="post" 
-        enctype="text/plain"
-        name="contactForm"
-        id="contactForm">
+        <form action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?> method="POST" enctype="text/plain" name="contactForm" id="contactForm">
             <label for="firstname" style="color:gray;">Name<br></label>
-            <input type="text"  
-        id="firstname" 
-        style="width: 400px;
-        height: 26px;"
-        placeholder="meow meowerson";>
+            <span class="text-danger">*<?php echo $nameErr; ?></span>
+            <input type="text" class="form-control" id="firstname" placeholder="full name" name="name" style="width: 400px; height: 26px;"/>
         <p id="p1"></p>
     <label for="email" style="color:gray;">Email<br></label>
-    <input type="email" 
-            id="email"
-            style="width: 400px;
-            height: 26px;"
-            placeholder="meow.meowerson@meow.com">
+    <span class="text-danger">*<?php echo $emailErr; ?></span>
+    <input type="email" class="form-control" id="email" placeholder="e-mail" name="email" style="width: 400px;
+    height: 26px;"/>
             <p id="p2"></p>
             <br>
             <label for="comments" style="color:gray;">
                 comments or concerns<br>
             </label>
-        <textarea 
-            name="comments" 
-            id="comments"
-            style="width: 500px;
-            height: 200px;"
-            placeholder="what do you need to tell me?">
-        </textarea>
+            <span class="text-danger">*<?php echo $commentErr; ?></span>
+        <textarea name="comments" id="comments" style="width: 500px; height: 200px;" placeholder="what do you need to tell me?"></textarea>
         <p id="p3"></p>
-        <input type="submit" value="submit" class="button" id="submit" method="post" action="mailto:joyce.pinilla@live.com">
+        <input type="submit" role="submit" name="button" id="submit" method="post" action="mailto:joyce.pinilla@live.com">
         </form>
         <script>
         $("#contactForm").validate({
@@ -81,6 +113,35 @@
         });</script>
     </div>
 </section>
+
+<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { ?>
+
+<section id="results">
+
+<div class="container">
+            <div class="row" id="centerdiv">
+                 <!-- /* left column */ -->
+                 <div class="col-sm" id="div1">
+                 <br>
+                 <h2>form entry:</h2>
+                 <br>
+                 <ul>
+                 <?php 
+                if ($name !== "") { echo "<li>NAME: $name </li>"; }
+                if ($email !== "") { echo "<li>EMAIL: $email </li>"; }
+                if ($comment !== "") { echo "<li>COMMENTS: $comment</li>"; }
+                 ?>
+
+                </ul>
+
+                </div>
+            </div>
+        </div>
+        
+        </section>
+<?php } ?>
+
+
 
     </body>
 </html>
